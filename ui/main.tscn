@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://de1hprsa6hq4"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_qbr4h"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="2_34tkj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxxmf"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4jti"]
+font_size = 20
+
+[node name="Suika" type="Node2D"]
+script = ExtResource("1_qbr4h")
+
+[node name="ContainerShape" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ContainerShape"]
+position = Vector2(325, -1)
+polygon = PackedVector2Array(14, 90, 0, 90, 0, 582, 543, 582, 543, 90, 529, 90, 529, 568, 14, 568)
+
+[node name="Border Left" type="ColorRect" parent="ContainerShape"]
+offset_left = 325.0
+offset_top = 89.0
+offset_right = 339.0
+offset_bottom = 581.0
+color = Color(1, 0.368627, 0.47451, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Border Right" type="ColorRect" parent="ContainerShape"]
+offset_left = 854.0
+offset_top = 89.0
+offset_right = 868.0
+offset_bottom = 581.0
+color = Color(1, 0.368627, 0.47451, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Border Bottom" type="ColorRect" parent="ContainerShape"]
+offset_left = 325.0
+offset_top = 567.0
+offset_right = 868.0
+offset_bottom = 581.0
+color = Color(1, 0.368627, 0.47451, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="Canvas"]
+offset_left = 894.0
+offset_top = 102.0
+offset_right = 934.0
+offset_bottom = 160.0
+text = "0"
+label_settings = SubResource("LabelSettings_rxxmf")
+script = ExtResource("2_34tkj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next Object" type="Label" parent="Canvas"]
+offset_left = 227.0
+offset_top = 112.0
+offset_right = 319.0
+offset_bottom = 143.0
+text = "Next"
+label_settings = SubResource("LabelSettings_s4jti")
+metadata/_edit_use_anchors_ = true
+
+[node name="Marker Left" type="Marker2D" parent="."]
+position = Vector2(370, 29)
+
+[node name="Marker Right" type="Marker2D" parent="."]
+position = Vector2(830, 25)
+
+[node name="Marker Next Object" type="Marker2D" parent="."]
+position = Vector2(249, 178)
+
+[node name="Marker Full" type="Marker2D" parent="."]
+position = Vector2(354, 118)
