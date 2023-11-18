@@ -24,6 +24,10 @@ Today, YouTube shorts has a powerful algorithm, but that doesn't mean you'll get
 
 I came across <a href="https://www.youtube.com/c/piratesoftware">PirateSoftware</a>'s YT Shorts, and the amount of motivation that he gave is definitely different in a way that it relives my enthusiasm to be more productive.
 
+It slowly erodes my bad ol habit of procrastination, but slowly is better than being an unproductive piece of ...
+
+This game definitely a baby step, easy mode, you fail and learn.
+
 Now I won't share too much of details of what is happening in the background, as this is GitHub and not a therapy website. Some people are just too sensitive to read it and I've came across a couple of them.
 
 ### Built With
