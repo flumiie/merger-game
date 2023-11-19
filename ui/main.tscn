@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://de1hprsa6hq4"]
+[gd_scene load_steps=6 format=3 uid="uid://de1hprsa6hq4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qbr4h"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="2_34tkj"]
@@ -8,6 +8,12 @@ font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_s4jti"]
 font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ny2s8"]
+font_size = 70
+font_color = Color(1, 0.733333, 0.72549, 1)
+outline_size = 15
+shadow_size = 0
 
 [node name="Suika" type="Node2D"]
 script = ExtResource("1_qbr4h")
@@ -62,6 +68,15 @@ offset_bottom = 143.0
 text = "Next"
 label_settings = SubResource("LabelSettings_s4jti")
 metadata/_edit_use_anchors_ = true
+
+[node name="Game Over" type="Label" parent="Canvas"]
+visible = false
+offset_left = 395.0
+offset_top = 287.0
+offset_right = 797.0
+offset_bottom = 386.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_ny2s8")
 
 [node name="Marker Left" type="Marker2D" parent="."]
 position = Vector2(370, 29)
