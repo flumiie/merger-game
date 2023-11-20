@@ -4,7 +4,8 @@ extends Node2D
 @onready var marker_right = $"Marker Right"
 @onready var marker_next_object = $"Marker Next Object"
 @onready var marker_full = $"Marker Full"
-@onready var label_game_over = $"Canvas/Game Over"
+@onready var game_over_grid_container = $Canvas/GridContainer
+
 var obj_scene := preload("res://ui/object.tscn")
 var current_object
 var next_object
@@ -53,8 +54,10 @@ func drop_object():
 	next_object = create_object(marker_next_object.global_position)
 
 func on_game_over(height: float):
-	if height < marker_full.global_position.y:
+	if height <= marker_full.global_position.y:
 		is_game_over = true
-		label_game_over.visible = true
-		#await get_tree().create_timer(5).timeout
-		#get_tree().reload_current_scene()
+		game_over_grid_container.visible = true
+
+func _on_button_pressed():
+	get_tree().reload_current_scene()
+

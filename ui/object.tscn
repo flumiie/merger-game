@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxmpipl1r4nk1"]
+[gd_scene load_steps=4 format=3 uid="uid://bxmpipl1r4nk1"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_uug5b"]
-[ext_resource type="Texture2D" uid="uid://c802nwf6xdvbn" path="res://textures/icon.svg" id="2_olbsb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kba7c"]
 friction = 0.25
@@ -26,4 +25,3 @@ debug_color = Color(0.85098, 0.317647, 0.517647, 0.419608)
 
 [node name="Texture" type="Sprite2D" parent="."]
 scale = Vector2(0.207031, 0.207031)
-texture = ExtResource("2_olbsb")

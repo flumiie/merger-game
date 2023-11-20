@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://de1hprsa6hq4"]
+[gd_scene load_steps=7 format=3 uid="uid://de1hprsa6hq4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qbr4h"]
+[ext_resource type="Texture2D" uid="uid://c802nwf6xdvbn" path="res://textures/icon.svg" id="2_3hiyl"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="2_34tkj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rxxmf"]
@@ -18,11 +19,22 @@ shadow_size = 0
 [node name="Suika" type="Node2D"]
 script = ExtResource("1_qbr4h")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(63, 62)
+texture = ExtResource("2_3hiyl")
+
 [node name="ContainerShape" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ContainerShape"]
 position = Vector2(325, -1)
 polygon = PackedVector2Array(14, 90, 0, 90, 0, 582, 543, 582, 543, 90, 529, 90, 529, 568, 14, 568)
+
+[node name="Game Over Line" type="ColorRect" parent="ContainerShape"]
+offset_left = 325.0
+offset_top = 118.0
+offset_right = 868.0
+offset_bottom = 122.0
+color = Color(1, 0, 0, 0.501961)
 
 [node name="Border Left" type="ColorRect" parent="ContainerShape"]
 offset_left = 325.0
@@ -69,14 +81,23 @@ text = "Next"
 label_settings = SubResource("LabelSettings_s4jti")
 metadata/_edit_use_anchors_ = true
 
-[node name="Game Over" type="Label" parent="Canvas"]
+[node name="GridContainer" type="GridContainer" parent="Canvas"]
 visible = false
-offset_left = 395.0
-offset_top = 287.0
-offset_right = 797.0
-offset_bottom = 386.0
+offset_left = 391.68
+offset_top = 259.2
+offset_right = 793.68
+offset_bottom = 411.2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Game Over" type="Label" parent="Canvas/GridContainer"]
+layout_mode = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_ny2s8")
+
+[node name="Button" type="Button" parent="Canvas/GridContainer"]
+layout_mode = 2
+text = "New Game"
 
 [node name="Marker Left" type="Marker2D" parent="."]
 position = Vector2(370, 29)
@@ -85,7 +106,11 @@ position = Vector2(370, 29)
 position = Vector2(830, 25)
 
 [node name="Marker Next Object" type="Marker2D" parent="."]
-position = Vector2(249, 178)
+position = Vector2(249, 186)
 
 [node name="Marker Full" type="Marker2D" parent="."]
-position = Vector2(354, 118)
+position = Vector2(354, 157)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[connection signal="pressed" from="Canvas/GridContainer/Button" to="." method="_on_button_pressed"]
